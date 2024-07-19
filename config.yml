@@ -2,15 +2,13 @@ global:
   sampling_frequency: 250
   channels: ["EEG FP1-REF", "EEG FP2-REF", "EEG F7-REF", "EEG F3-REF", "EEG F4-REF", "EEG F8-REF", "EEG T3-REF", "EEG C3-REF", "EEG C4-REF", "EEG T4-REF", "EEG T5-REF", "EEG P3-REF", "EEG P4-REF", "EEG T6-REF", "EEG O1-REF", "EEG O2-REF", "EEG CZ-REF", "EEG A1-REF", "EEG A2-REF"]
 
-
 preprocessing:
   configurations: ["01_tcp_ar"]
-  input_path: /dhc/home/jannis.hajda/tuh-eeg-seizure-detection/data/raw
-  output_file: /dhc/home/jannis.hajda/tuh-eeg-seizure-detection/data/processed/windows.nc
-  window_length: 20
+  input_path: data/raw
+  output_file: data/preprocessed/windows.nc
+  window_length: 21
   overlap: 10.5
- 
 
 feature_extraction:
-  input_file: /dhc/home/jannis.hajda/tuh-eeg-seizure-detection/data/processed/windows.nc
-  output_file: /dhc/home/jannis.hajda/tuh-eeg-seizure-detection/data/features/features.csv
+  input_file: data/preprocessed/windows.nc
+  output_file: data/features/features.csv
