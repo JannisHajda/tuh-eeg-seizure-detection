@@ -36,6 +36,17 @@ def get_feature_extraction_config():
     return feature_extraction_config
 
 
+def get_ml_config():
+    global_config = get_global_config()
+    
+    ml_config = config['ml']
+    ml_config['input_file'] = get_absolute_path(ml_config['input_file'])
+
+    ml_config = {**ml_config, **global_config}
+
+    return ml_config
+
+
 def split_channels_to_hemispheres(channels: list):
     left_hemisphere = []
     right_hemisphere = []

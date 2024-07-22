@@ -12,3 +12,6 @@ preprocessing:
 feature_extraction:
   input_file: data/preprocessed/windows.nc
   output_file: data/features/features.csv
+
+ml:
+  input_file: data/features/features.csv
