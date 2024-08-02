@@ -47,6 +47,17 @@ def get_ml_config():
     return ml_config
 
 
+def get_dl_config():
+    global_config = get_global_config()
+    
+    dl_config = config['dl']
+    dl_config['input_file'] = get_absolute_path(dl_config['input_file'])
+    
+    dl_config = {**dl_config, **global_config}
+    
+    return dl_config
+
+
 def split_channels_to_hemispheres(channels: list):
     left_hemisphere = []
     right_hemisphere = []
