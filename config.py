@@ -12,6 +12,18 @@ def get_absolute_path(relative_path):
     return os.path.join(project_root, relative_path)
 
 
+def get_exploration_config():
+    global_config = get_global_config()
+    
+    exploration_config = config['exploration']
+    exploration_config['input_path'] = get_absolute_path(exploration_config['input_path'])
+    exploration_config['output_path'] = get_absolute_path(exploration_config['output_path'])
+    
+    exploration_config = {**exploration_config, **global_config}
+    
+    return exploration_config
+
+
 def get_preprocessing_config():
     global_config = get_global_config()
     

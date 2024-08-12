@@ -2,6 +2,10 @@ global:
   sampling_frequency: 250
   channels: ["EEG FP1-REF", "EEG FP2-REF", "EEG F7-REF", "EEG F3-REF", "EEG F4-REF", "EEG F8-REF", "EEG T3-REF", "EEG C3-REF", "EEG C4-REF", "EEG T4-REF", "EEG T5-REF", "EEG P3-REF", "EEG P4-REF", "EEG T6-REF", "EEG O1-REF", "EEG O2-REF", "EEG CZ-REF", "EEG A1-REF", "EEG A2-REF"]
 
+exploration:
+  input_path: data/raw/
+  output_path: data/exploration/
+
 preprocessing:
   configurations: ["01_tcp_ar"]
   input_path: data/raw
